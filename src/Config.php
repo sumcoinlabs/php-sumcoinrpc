@@ -19,7 +19,7 @@ class Config implements \ArrayAccess, \Countable
     protected $config = [
         'scheme'        => 'http',
         'host'          => '127.0.0.1',
-        'port'          => 8332,
+        'port'          => 3332,
         'user'          => null,
         'password'      => null,
         'ca'            => null,

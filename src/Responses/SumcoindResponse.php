@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Denpa\Bitcoin\Responses;
+namespace Denpa\Sumcoin\Responses;
 
-use Denpa\Bitcoin\Traits\Collection;
-use Denpa\Bitcoin\Traits\ImmutableArray;
-use Denpa\Bitcoin\Traits\SerializableContainer;
+use Denpa\Sumcoin\Traits\Collection;
+use Denpa\Sumcoin\Traits\ImmutableArray;
+use Denpa\Sumcoin\Traits\SerializableContainer;
 
 class BitcoindResponse extends Response implements
     \ArrayAccess,

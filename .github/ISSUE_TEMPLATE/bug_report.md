@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help improve php-bitcoinrpc
+about: Create a report to help improve php-sumcoinrpc
 
 ---
 
@@ -20,7 +20,7 @@ Feel free to omit any sensitive information.
 
 **Cryptocurrency**
 Describe used software and network:
-* Software: Bitcoin Core v0.17.0
+* Software: Sumcoin Core v0.16.0
 * Network: mainnet or testnet
 
 **Environment**

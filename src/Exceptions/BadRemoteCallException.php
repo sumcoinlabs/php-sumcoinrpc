@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Denpa\Bitcoin\Exceptions;
+namespace Denpa\Sumcoin\Exceptions;
 
-use Denpa\Bitcoin\Responses\Response;
+use Denpa\Sumcoin\Responses\Response;
 
 class BadRemoteCallException extends ClientException
 {
     /**
      * Response object.
      *
-     * @var \Denpa\Bitcoin\Responses\Response
+     * @var \Denpa\Sumcoin\Responses\Response
      */
     protected $response;
 
     /**
      * Constructs new bad remote call exception.
      *
-     * @param \Denpa\Bitcoin\Responses\Response $response
+     * @param \Denpa\Sumcoin\Responses\Response $response
      *
      * @return void
      */
@@ -33,7 +33,7 @@ class BadRemoteCallException extends ClientException
     /**
      * Gets response object.
      *
-     * @return \Denpa\Bitcoin\Responses\Response
+     * @return \Denpa\Sumcoin\Responses\Response
      */
     public function getResponse() : Response
     {

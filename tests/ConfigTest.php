@@ -1,8 +1,8 @@
 <?php
 
-namespace Denpa\Bitcoin\Tests;
+namespace Denpa\Sumcoin\Tests;
 
-use Denpa\Bitcoin\Config;
+use Denpa\Sumcoin\Config;
 
 class ConfigTest extends TestCase
 {
@@ -49,7 +49,7 @@ class ConfigTest extends TestCase
      */
     public function testGetDsn() : void
     {
-        $this->assertEquals('http://127.0.0.1:8332', $this->config->getDsn());
+        $this->assertEquals('http://127.0.0.1:3332', $this->config->getDsn());
     }
 
     /**

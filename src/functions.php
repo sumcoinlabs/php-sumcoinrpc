@@ -15,51 +15,51 @@ if (!function_exists('to_bitcoin')) {
      *
      * @return string
      */
-    function to_bitcoin(int $satoshi) : string
+    function to_sumcoin(int $sigma) : string
     {
-        return bcdiv((string) $satoshi, (string) 1e8, 8);
+        return bcdiv((string) $sigma, (string) 1e8, 8);
     }
 }
 
-if (!function_exists('to_satoshi')) {
+if (!function_exists('to_sigma')) {
     /**
-     * Converts from bitcoin to satoshi.
+     * Converts from sumcoin to sigma.
      *
-     * @param string|float $bitcoin
+     * @param string|float $sumcoin
      *
      * @return string
      */
-    function to_satoshi($bitcoin) : string
+    function to_sigma($sumcoin) : string
     {
-        return bcmul(to_fixed((float) $bitcoin, 8), (string) 1e8);
+        return bcmul(to_fixed((float) $sumcoin, 8), (string) 1e8);
     }
 }
 
-if (!function_exists('to_ubtc')) {
+if (!function_exists('to_usum')) {
     /**
-     * Converts from bitcoin to ubtc/bits.
+     * Converts from sumcoin to usum/sums.
      *
-     * @param string|float $bitcoin
+     * @param string|float $sumcoin
      *
      * @return string
      */
-    function to_ubtc($bitcoin) : string
+    function to_usum($sumcoin) : string
     {
         return bcmul(to_fixed((float) $bitcoin, 8), (string) 1e6, 4);
     }
 }
 
-if (!function_exists('to_mbtc')) {
+if (!function_exists('to_msum')) {
     /**
-     * Converts from bitcoin to mbtc.
+     * Converts from sumcoin to msum.
      *
-     * @param string|float $bitcoin
+     * @param string|float $sumcoin
      *
      * @return string
      */
-    function to_mbtc($bitcoin) : string
+    function to_msum($sumcoin) : string
     {
-        return bcmul(to_fixed((float) $bitcoin, 8), (string) 1e3, 4);
+        return bcmul(to_fixed((float) $sumcoin, 8), (string) 1e3, 4);
     }
 }
 

@@ -1,71 +1,71 @@
 <?php
 
-namespace Denpa\Bitcoin\Tests;
+namespace Denpa\Sumcoin\Tests;
 
-use Denpa\Bitcoin;
-use Denpa\Bitcoin\Exceptions\BadConfigurationException;
-use Denpa\Bitcoin\Exceptions\Handler as ExceptionHandler;
+use Denpa\Sumcoin;
+use Denpa\Sumcoin\Exceptions\BadConfigurationException;
+use Denpa\Sumcoin\Exceptions\Handler as ExceptionHandler;
 
 class FunctionsTest extends TestCase
 {
     /**
-     * Test satoshi to btc converter.
+     * Test sigma to sum converter.
      *
-     * @param int    $satoshi
-     * @param string $bitcoin
+     * @param int    $sigma
+     * @param string $sumcoin
      *
      * @return void
      *
-     * @dataProvider satoshiBtcProvider
+     * @dataProvider sigmaSumProvider
      */
-    public function testToBtc(int $satoshi, string $bitcoin) : void
+    public function testToSum(int $sigma, string $sumcoin) : void
     {
-        $this->assertEquals($bitcoin, Bitcoin\to_bitcoin($satoshi));
+        $this->assertEquals($sumcoin, Sumcoin\to_sumcoin($sigma));
     }
 
     /**
-     * Test bitcoin to satoshi converter.
+     * Test sumcoin to sigma converter.
      *
-     * @param int    $satoshi
-     * @param string $bitcoin
+     * @param int    $sigma
+     * @param string $sumcoin
      *
      * @return void
      *
-     * @dataProvider satoshiBtcProvider
+     * @dataProvider sigmaSumProvider
      */
-    public function testToSatoshi(int $satoshi, string $bitcoin) : void
+    public function testToSigma(int $sigma, string $sumcoin) : void
     {
-        $this->assertEquals($satoshi, Bitcoin\to_satoshi($bitcoin));
+        $this->assertEquals($sigma, Sumcoin\to_sigma($sumcoin));
     }
 
     /**
-     * Test bitcoin to ubtc/bits converter.
+     * Test sumcoin to usum/sums converter.
      *
-     * @param int    $ubtc
-     * @param string $bitcoin
+     * @param int    $usum
+     * @param string $sumcoin
      *
      * @return void
      *
-     * @dataProvider bitsBtcProvider
+     * @dataProvider sumsSumProvider
      */
-    public function testToBits(int $ubtc, string $bitcoin) : void
+    public function testToBits(int $usum, string $sumcoin) : void
     {
-        $this->assertEquals($ubtc, Bitcoin\to_ubtc($bitcoin));
+        $this->assertEquals($usum, Sumcoin\to_usum($sumcoin));
     }
 
     /**
-     * Test bitcoin to mbtc converter.
+     * Test sumcoin to msum converter.
      *
-     * @param float  $mbtc
-     * @param string $bitcoin
+     * @param float  $msum
+     * @param string $sumcoin
      *
      * @return void
      *
-     * @dataProvider mbtcBtcProvider
+     * @dataProvider msumSumProvider
      */
-    public function testToMbtc(float $mbtc, string $bitcoin) : void
+    public function testToMsum(float $msum, string $sumcoin) : void
     {
-        $this->assertEquals($mbtc, Bitcoin\to_mbtc($bitcoin));
+        $this->assertEquals($msum, Sumcoin\to_msum($sumcoin));
     }
 
     /**
@@ -84,7 +84,7 @@ class FunctionsTest extends TestCase
         int $precision,
         string $expected
     ) : void {
-        $this->assertSame($expected, Bitcoin\to_fixed($float, $precision));
+        $this->assertSame($expected, Sumcoin\to_fixed($float, $precision));
     }
 
     /**
@@ -109,7 +109,7 @@ class FunctionsTest extends TestCase
         ?string $user,
         ?string $pass
     ) : void {
-        $parts = Bitcoin\split_url($url);
+        $parts = Sumcoin\split_url($url);
 
         $this->assertEquals($parts['scheme'], $scheme);
         $this->assertEquals($parts['host'], $host);
@@ -130,7 +130,7 @@ class FunctionsTest extends TestCase
         $this->expectException(BadConfigurationException::class);
         $this->expectExceptionMessage('Invalid url');
 
-        Bitcoin\split_url('cookies!');
+        Sumcoin\split_url('cookies!');
     }
 
     /**
@@ -140,7 +140,7 @@ class FunctionsTest extends TestCase
      */
     public function testExceptionHandlerHelper() : void
     {
-        $this->assertInstanceOf(ExceptionHandler::class, Bitcoin\exception());
+        $this->assertInstanceOf(ExceptionHandler::class, Sumcoin\exception());
     }
 
     /**
@@ -161,11 +161,11 @@ class FunctionsTest extends TestCase
     }
 
     /**
-     * Provides satoshi and bitcoin values.
+     * Provides sigma and sumcoin values.
      *
      * @return array
      */
-    public function satoshiBtcProvider() : array
+    public function sigmaSumProvider() : array
     {
         return [
             [1000, '0.00001000'],
@@ -177,11 +177,11 @@ class FunctionsTest extends TestCase
     }
 
     /**
-     * Provides satoshi and ubtc/bits values.
+     * Provides sigma and usum/sums values.
      *
      * @return array
      */
-    public function bitsBtcProvider() : array
+    public function sumsSumProvider() : array
     {
         return [
             [10, '0.00001000'],
@@ -193,11 +193,11 @@ class FunctionsTest extends TestCase
     }
 
     /**
-     * Provides satoshi and mbtc values.
+     * Provides sigma and msum values.
      *
      * @return array
      */
-    public function mbtcBtcProvider() : array
+    public function msumSumProvider() : array
     {
         return [
             [0.01, '0.00001000'],

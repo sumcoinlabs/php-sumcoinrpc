@@ -1,7 +1,7 @@
 {
     "name": "denpa/php-bitcoinrpc",
     "type": "library",
-    "description": "Bitcoin JSON-RPC client based on GuzzleHttp",
+    "description": "Sumcoin JSON-RPC client based on GuzzleHttp",
     "keywords": ["bitcoin","api","jsonrpc","guzzle"],
     "homepage": "https://github.com/denpamusic/php-bitcoinrpc",
     "license": "MIT",

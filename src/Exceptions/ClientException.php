@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Denpa\Bitcoin\Exceptions;
+namespace Denpa\Sumcoin\Exceptions;
 
 use Exception;
 

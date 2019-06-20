@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Denpa\Bitcoin\Exceptions;
+namespace Denpa\Sumcoin\Exceptions;
 
-use Denpa\Bitcoin\Traits\Singleton;
+use Denpa\Sumcoin\Traits\Singleton;
 use GuzzleHttp\Exception\RequestException;
 use Throwable;
 

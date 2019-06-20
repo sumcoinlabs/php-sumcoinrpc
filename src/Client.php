@@ -138,7 +138,7 @@ class Client
     }
 
     /**
-     * Makes request to Bitcoin Core.
+     * Makes request to Sumcoin Core.
      *
      * @param string $method
      * @param mixed  $params
@@ -163,7 +163,7 @@ class Client
     }
 
     /**
-     * Makes async request to Bitcoin Core.
+     * Makes async request to Sumcoin Core.
      *
      * @param string        $method
      * @param mixed         $params
@@ -211,7 +211,7 @@ class Client
     }
 
     /**
-     * Makes request to Bitcoin Core.
+     * Makes request to Sumcoin Core.
      *
      * @param string $method
      * @param array  $params
@@ -234,7 +234,7 @@ class Client
      */
     protected function getConfigProvider() : string
     {
-        return 'Denpa\\Bitcoin\\Config';
+        return 'Denpa\\Sumcoin\\Config';
     }
 
     /**
@@ -244,7 +244,7 @@ class Client
      */
     protected function getResponseHandler() : string
     {
-        return 'Denpa\\Bitcoin\\Responses\\BitcoindResponse';
+        return 'Denpa\\Sumcoin\\Responses\\SumcoindResponse';
     }
 
     /**
@@ -262,7 +262,7 @@ class Client
 
                 return new $handler($response);
             }),
-            'bitcoind_response'
+            'sumcoind_response'
         );
 
         return $stack;
